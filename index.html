@@ -1573,22 +1573,46 @@
 
       try {
         if (window.TP_MODE === false) {
-          // MANUAL rejim
-          const userId = tg.initDataUnsafe?.user?.id || 0;
-          const response = await fetch('/api/check_subscription/' + window.BOT_ID, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ user_id: userId })
-          });
-          const data = await response.json();
+  // MANUAL rejim — server.py dagi /api/check_subscription (BOT_ID siz)
+  const userId = tg.initDataUnsafe?.user?.id || null;
+  const initData = tg.initData || '';
 
-          if (data.subscribed === true) {
-            approveWithdrawDirectly();
-          } else {
-            errorEl.textContent = "SIZ BARCHA KANALLARGA OBUNA BO'LMAGANSIZ";
-            errorEl.classList.remove('hidden');
-          }
-        } else {
+  console.log('[CHECK_SUB] userId =', userId, 'initData len =', initData.length);
+
+  if (!userId && !initData) {
+    errorEl.textContent = "Foydalanuvchi aniqlanmadi. Botni /start bilan qayta ishga tushiring.";
+    errorEl.classList.remove('hidden');
+    return;
+  }
+
+  const URL = '/api/check_subscription';
+  console.log('[CHECK_SUB] Fetching:', URL);
+
+  const response = await fetch(URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      user_id: userId,
+      init_data: initData
+    })
+  });
+
+  console.log('[CHECK_SUB] status =', response.status);
+
+  const data = await response.json();
+  console.log('[CHECK_SUB] data =', data);
+
+  if (data.subscribed === true) {
+    approveWithdrawDirectly();
+  } else {
+    if (Array.isArray(data.not_subscribed) && data.not_subscribed.length > 0) {
+      errorEl.textContent = "OBUNA BO'LISH QOLDI: " + data.not_subscribed.join(', ');
+    } else {
+      errorEl.textContent = "SIZ BARCHA KANALLARGA OBUNA BO'LMAGANSIZ";
+    }
+    errorEl.classList.remove('hidden');
+  }
+}
           // TRAFFICPLACE STS rejimi
           const initData = tg.initData || '';
           const verifiedIds = [];   // tekshiruvdan o'tgan resurs id lari
