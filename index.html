@@ -483,9 +483,9 @@
     tg.expand();
     tg.setHeaderColor('#7000FF');
 
-    // ПОЛНЫЙ ПУЛ: 33 старые карточки (с картинками) + 30 новых из текста
+    // ПОЛНЫЙ ПУЛ: 33 старые + 18 уникальных из списка + 20 НОВЫХ ПРИДУМАННЫХ = 71 карточка
     const PRODUCT_ASSETS = [
-      // СТАРЫЕ КАРТОЧКИ
+      // 33 СТАРЫЕ КАРТОЧКИ
       { id: 1, name: "Tez quvvatlash 67W", img: "https://i.postimg.cc/P5743xgJ/1.webp", isPromo: true },
       { id: 2, name: "Adidas Forum Low krossovkalari", img: "https://i.postimg.cc/tC2D6DDV/1-(1).webp", isPromo: true },
       { id: 3, name: "Yoritilgan o'yin klaviaturasi", img: "https://i.postimg.cc/rFQg4ggh/1-(10).webp", isPromo: true },
@@ -520,37 +520,47 @@
       { id: 32, name: "Bolalar asboblari", img: "https://i.postimg.cc/nhWkRzys/2-(1).webp", isPromo: false },
       { id: 33, name: "Tozalash pastasi", img: "https://i.postimg.cc/SxPrTsBz/ab-1.webp", isPromo: false },
       
-      // НОВЫЕ 30 КАРТОЧЕК ИЗ ТЕКСТА
-      { id: 34, name: "Samsung Galaxy S23 smartfoni (Android 13, Snapdragon 8 Gen 2, 256 GB, 6.67\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+Galaxy+S23", isPromo: true },
+      // 18 УНИКАЛЬНЫХ ИЗ ВАШЕГО СПИСКА
+      { id: 34, name: "Samsung Galaxy S23 smartfoni (Android 13, Snapdragon 8 Gen 2, 256 GB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+Galaxy+S23", isPromo: true },
       { id: 35, name: "Apple MacBook Air M2 noutbuki (Apple M2, 8 GB, 256 GB, 13.3\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=MacBook+Air+M2", isPromo: true },
       { id: 36, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
       { id: 37, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
-      { id: 38, name: "Nestlé \"Shokoladli pirog\" shokoladi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Shokolad", isPromo: false },
-      { id: 39, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
-      { id: 40, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
+      { id: 38, name: "Nestlé \"Shokoladli pirog\" shokoladi (300 g, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Shokolad", isPromo: false },
+      { id: 39, name: "Samsung QLED 4K aqlli televizori (55\", Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
+      { id: 40, name: "Bose QuietComfort 35 II quloqchinlari (Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
       { id: 41, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
-      { id: 42, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
+      { id: 42, name: "Sony Bravia OLED 4K televizori (65\", Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
       { id: 43, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false },
       { id: 44, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Yogurt", isPromo: false },
-      { id: 45, name: "Nest aqlli uyi (Aqlli rozetka, Aqlli termostat, Aqlli smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
-      { id: 46, name: "Nestlé \"Shokoladli pirog\" pirogi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Pirog", isPromo: false },
-      { id: 47, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
-      { id: 48, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
-      { id: 49, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
-      { id: 50, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
-      { id: 51, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
-      { id: 52, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
-      { id: 53, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false },
-      { id: 54, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Yogurt", isPromo: false },
-      { id: 55, name: "Nest aqlli uyi (Aqlli rozetka, Aqlli termostat, Aqlli smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
-      { id: 56, name: "Nestlé \"Shokoladli pirog\" pirogi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Pirog", isPromo: false },
-      { id: 57, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
-      { id: 58, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
-      { id: 59, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
-      { id: 60, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
-      { id: 61, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
-      { id: 62, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
-      { id: 63, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false }
+      { id: 45, name: "Nest aqlli uyi (Aqlli rozetka, termostat, smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
+      { id: 46, name: "Xiaomi Redmi Note 13 Pro smartfoni (8/256 GB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Xiaomi+Redmi+Note+13", isPromo: true },
+      { id: 47, name: "Dyson V15 changyutgichi (Simsiz, 240 Vt)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Dyson+V15", isPromo: true },
+      { id: 48, name: "Philips Airfryer XXL (6.2 L, HD9860)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Philips+Airfryer", isPromo: false },
+      { id: 49, name: "Apple Watch Series 9 (45mm, GPS)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Apple+Watch+S9", isPromo: true },
+      { id: 50, name: "Logitech MX Master 3S sichqonchasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Logitech+MX+Master", isPromo: false },
+      { id: 51, name: "Sony PlayStation 5 Slim konsoli (1 TB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=PlayStation+5+Slim", isPromo: true },
+
+      // 20 НОВЫХ ПРИДУМАННЫХ КАРТОЧЕК
+      { id: 52, name: "GoPro HERO12 Black ekstremal kamerasi (5.3K, 27MP)", img: "https://placehold.co/300x400/EEEEEE/333333?text=GoPro+HERO12", isPromo: true },
+      { id: 53, name: "JBL Charge 5 portativ dinamigi (20W, IP67)", img: "https://placehold.co/300x400/EEEEEE/333333?text=JBL+Charge+5", isPromo: false },
+      { id: 54, name: "Kindle Paperwhite 11 elektron kitobi (16 GB, 6.8\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kindle+Paperwhite", isPromo: false },
+      { id: 55, name: "Nike Air Force 1 '07 krossovkalari (Oq, Erkaklar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nike+Air+Force+1", isPromo: true },
+      { id: 56, name: "Adidas Ultraboost 22 yugurish krossovkalari", img: "https://placehold.co/300x400/EEEEEE/333333?text=Adidas+Ultraboost", isPromo: true },
+      { id: 57, name: "The North Face Resolve 2 shamol kurtkasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=North+Face+Kurtka", isPromo: false },
+      { id: 58, name: "Ray-Ban Aviator quyosh ko'zoynagi (RB3025)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Ray-Ban+Aviator", isPromo: true },
+      { id: 59, name: "Casio G-Shock DW-5600E qo'l soati", img: "https://placehold.co/300x400/EEEEEE/333333?text=Casio+G-Shock", isPromo: false },
+      { id: 60, name: "Fossil Gen 6 smart soati (44mm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Fossil+Gen+6", isPromo: true },
+      { id: 61, name: "Dyson Airwrap Multi-Styler sochlar uchun", img: "https://placehold.co/300x400/EEEEEE/333333?text=Dyson+Airwrap", isPromo: true },
+      { id: 62, name: "Oral-B iO Series 9 elektr tish cho'tkasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Oral-B+iO+9", isPromo: false },
+      { id: 63, name: "Braun Series 9 Pro elektr soqol olish mashinasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Braun+Series+9", isPromo: true },
+      { id: 64, name: "De'Longhi Magnifica S kofe mashinasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=DeLonghi+Magnifica", isPromo: true },
+      { id: 65, name: "Nespresso Vertuo Next kapsula kofe apparati", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nespresso+Vertuo", isPromo: false },
+      { id: 66, name: "Instant Pot Duo 7-in-1 multivarka (6 L)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Instant+Pot+Duo", isPromo: false },
+      { id: 67, name: "Le Creuset Signature quyma temir qozon (24 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Le+Creuset+Qozon", isPromo: false },
+      { id: 68, name: "Lego Technic Ferrari Daytona SP3 (42143)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Lego+Ferrari", isPromo: true },
+      { id: 69, name: "Monopoly Classic stol o'yini (O'zbek tilida)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Monopoly+Classic", isPromo: false },
+      { id: 70, name: "Vans Old Skool krossovkalari (Qora/Oq)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Vans+Old+Skool", isPromo: false },
+      { id: 71, name: "Levi's 501 Original jinsi shimi (Erkaklar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Levis+501", isPromo: true }
     ];
 
     const MOCK_SELLERS = ["IRINA290", "VITALIY_SHOP", "W_STORE", "EXILE_OFFICIAL", "DIMA_MARKET", "E_COSMETICS"];
@@ -571,8 +581,8 @@
       withdrawMethod: 'card'
     };
 
-    const APP_STATE_VERSION = 'uzum_v6_merged'; // Изменил версию для сброса старых кешей
-    const APP_STATE_KEY = 'uzum_state2026_v6';
+    const APP_STATE_VERSION = 'uzum_v8_71'; // Изменил версию для сброса старых кешей
+    const APP_STATE_KEY = 'uzum_state2026_v8';
     const APP_STATE_VERSION_KEY = 'uzum_state_version';
 
     function loadState() {
