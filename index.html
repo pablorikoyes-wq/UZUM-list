@@ -483,7 +483,6 @@
     tg.expand();
     tg.setHeaderColor('#7000FF');
 
-    // ПОЛНЫЙ ПУЛ: 33 старые + 18 уникальных из списка + 20 НОВЫХ ПРИДУМАННЫХ = 71 карточка
     const PRODUCT_ASSETS = [
       // 33 СТАРЫЕ КАРТОЧКИ
       { id: 1, name: "Tez quvvatlash 67W", img: "https://i.postimg.cc/P5743xgJ/1.webp", isPromo: true },
@@ -520,47 +519,45 @@
       { id: 32, name: "Bolalar asboblari", img: "https://i.postimg.cc/nhWkRzys/2-(1).webp", isPromo: false },
       { id: 33, name: "Tozalash pastasi", img: "https://i.postimg.cc/SxPrTsBz/ab-1.webp", isPromo: false },
       
-      // 18 УНИКАЛЬНЫХ ИЗ ВАШЕГО СПИСКА
-      { id: 34, name: "Samsung Galaxy S23 smartfoni (Android 13, Snapdragon 8 Gen 2, 256 GB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+Galaxy+S23", isPromo: true },
-      { id: 35, name: "Apple MacBook Air M2 noutbuki (Apple M2, 8 GB, 256 GB, 13.3\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=MacBook+Air+M2", isPromo: true },
-      { id: 36, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
-      { id: 37, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
-      { id: 38, name: "Nestlé \"Shokoladli pirog\" shokoladi (300 g, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Shokolad", isPromo: false },
-      { id: 39, name: "Samsung QLED 4K aqlli televizori (55\", Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
-      { id: 40, name: "Bose QuietComfort 35 II quloqchinlari (Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
-      { id: 41, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
-      { id: 42, name: "Sony Bravia OLED 4K televizori (65\", Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
-      { id: 43, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false },
-      { id: 44, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Yogurt", isPromo: false },
-      { id: 45, name: "Nest aqlli uyi (Aqlli rozetka, termostat, smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
-      { id: 46, name: "Xiaomi Redmi Note 13 Pro smartfoni (8/256 GB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Xiaomi+Redmi+Note+13", isPromo: true },
-      { id: 47, name: "Dyson V15 changyutgichi (Simsiz, 240 Vt)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Dyson+V15", isPromo: true },
-      { id: 48, name: "Philips Airfryer XXL (6.2 L, HD9860)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Philips+Airfryer", isPromo: false },
-      { id: 49, name: "Apple Watch Series 9 (45mm, GPS)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Apple+Watch+S9", isPromo: true },
-      { id: 50, name: "Logitech MX Master 3S sichqonchasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Logitech+MX+Master", isPromo: false },
-      { id: 51, name: "Sony PlayStation 5 Slim konsoli (1 TB)", img: "https://placehold.co/300x400/EEEEEE/333333?text=PlayStation+5+Slim", isPromo: true },
-
-      // 20 НОВЫХ ПРИДУМАННЫХ КАРТОЧЕК
-      { id: 52, name: "GoPro HERO12 Black ekstremal kamerasi (5.3K, 27MP)", img: "https://placehold.co/300x400/EEEEEE/333333?text=GoPro+HERO12", isPromo: true },
-      { id: 53, name: "JBL Charge 5 portativ dinamigi (20W, IP67)", img: "https://placehold.co/300x400/EEEEEE/333333?text=JBL+Charge+5", isPromo: false },
-      { id: 54, name: "Kindle Paperwhite 11 elektron kitobi (16 GB, 6.8\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kindle+Paperwhite", isPromo: false },
-      { id: 55, name: "Nike Air Force 1 '07 krossovkalari (Oq, Erkaklar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nike+Air+Force+1", isPromo: true },
-      { id: 56, name: "Adidas Ultraboost 22 yugurish krossovkalari", img: "https://placehold.co/300x400/EEEEEE/333333?text=Adidas+Ultraboost", isPromo: true },
-      { id: 57, name: "The North Face Resolve 2 shamol kurtkasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=North+Face+Kurtka", isPromo: false },
-      { id: 58, name: "Ray-Ban Aviator quyosh ko'zoynagi (RB3025)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Ray-Ban+Aviator", isPromo: true },
-      { id: 59, name: "Casio G-Shock DW-5600E qo'l soati", img: "https://placehold.co/300x400/EEEEEE/333333?text=Casio+G-Shock", isPromo: false },
-      { id: 60, name: "Fossil Gen 6 smart soati (44mm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Fossil+Gen+6", isPromo: true },
-      { id: 61, name: "Dyson Airwrap Multi-Styler sochlar uchun", img: "https://placehold.co/300x400/EEEEEE/333333?text=Dyson+Airwrap", isPromo: true },
-      { id: 62, name: "Oral-B iO Series 9 elektr tish cho'tkasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Oral-B+iO+9", isPromo: false },
-      { id: 63, name: "Braun Series 9 Pro elektr soqol olish mashinasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=Braun+Series+9", isPromo: true },
-      { id: 64, name: "De'Longhi Magnifica S kofe mashinasi", img: "https://placehold.co/300x400/EEEEEE/333333?text=DeLonghi+Magnifica", isPromo: true },
-      { id: 65, name: "Nespresso Vertuo Next kapsula kofe apparati", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nespresso+Vertuo", isPromo: false },
-      { id: 66, name: "Instant Pot Duo 7-in-1 multivarka (6 L)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Instant+Pot+Duo", isPromo: false },
-      { id: 67, name: "Le Creuset Signature quyma temir qozon (24 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Le+Creuset+Qozon", isPromo: false },
-      { id: 68, name: "Lego Technic Ferrari Daytona SP3 (42143)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Lego+Ferrari", isPromo: true },
-      { id: 69, name: "Monopoly Classic stol o'yini (O'zbek tilida)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Monopoly+Classic", isPromo: false },
-      { id: 70, name: "Vans Old Skool krossovkalari (Qora/Oq)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Vans+Old+Skool", isPromo: false },
-      { id: 71, name: "Levi's 501 Original jinsi shimi (Erkaklar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Levis+501", isPromo: true }
+      // 38 КАРТОЧЕК С ВАШИМИ ССЫЛКАМИ (34-71)
+      { id: 34, name: "Samsung Galaxy S23 smartfoni (Android 13, Snapdragon 8 Gen 2, 256 GB)", img: "https://ir-3.ozone.ru/s3/multimedia-1-q/wc500/20363534882.jpg", isPromo: true },
+      { id: 35, name: "Apple MacBook Air M2 noutbuki (Apple M2, 8 GB, 256 GB, 13.3\")", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR81uqIkQAIxpDKHH1O6RCBcDpElrpn7GVKoGJ31hQSA&s=10", isPromo: true },
+      { id: 36, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8jkIQJW5tJgrkL-stU0NSC2Q828Rj_Xq7HUQR0bsYqg&s=10", isPromo: false },
+      { id: 37, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFEu7tPMBg19T-HhxTX8n_tn1_8hlYWJl9dX4Wuz-5w&s", isPromo: false },
+      { id: 38, name: "Nestlé \"Shokoladli pirog\" shokoladi (300 g, 17% shakar)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNaArcDkzIBk74nyFHioaDq3Lr9AhdvOxVGUFK4tdArQ&s=10", isPromo: false },
+      { id: 39, name: "Samsung QLED 4K aqlli televizori (55\", Tizen, 3840x2160)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSoECGJycKVZ286OrS1vS7-OhQiEkiXyts7It3yCW-MA&s=10", isPromo: true },
+      { id: 40, name: "Bose QuietComfort 35 II quloqchinlari (Active Noise Cancellation, 185 g)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUEIMxfSoMx4W6BB-cVwqMrmcsUiXNQp0CEnCIcIrzoQ&s", isPromo: false },
+      { id: 41, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPeAcz7AIJGTtYwl0mgSWRc_o8sR9oV1YxH5QnyVam_Q&s", isPromo: false },
+      { id: 42, name: "Sony Bravia OLED 4K televizori (65\", Android, 3840x2160)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvpindjv0-p-siHUiAQfjRhL16Gb4ukUOiY-GN1Sh7mw&s", isPromo: true },
+      { id: 43, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJeeBNr-pJTbKi0Tu_iXLzICsJ_BTDI0lpufHNC4LPxg&s", isPromo: false },
+      { id: 44, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAo1QVpS9LrOz7P6vqq-MP5GixHEmuaplZ74hxC4pYgw&s=10", isPromo: false },
+      { id: 45, name: "Nest aqlli uyi (Aqlli rozetka, termostat, smart-fob)", img: "https://ir-3.ozone.ru/s3/multimedia-2/wc100/6010899542.jpg", isPromo: true },
+      { id: 46, name: "Xiaomi Redmi Note 13 Pro smartfoni (8/256 GB)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQmzPzU_Q01xf2x4sA6lFERCFL1bcmXD2u1G8ZOnBUBg&s", isPromo: true },
+      { id: 47, name: "Dyson V15 changyutgichi (Simsiz, 240 Vt)", img: "https://ir-3.ozone.ru/s3/multimedia-1-s/wc500/7250051728.jpg", isPromo: true },
+      { id: 48, name: "Philips Airfryer XXL (6.2 L, HD9860)", img: "https://ir-3.ozone.ru/s3/multimedia-1-q/wc500/21011922818.jpg", isPromo: false },
+      { id: 49, name: "Apple Watch Series 9 (45mm, GPS)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ63oOtjtAneWFEpSGS-GSMk2QYK6_6z_nFtSPbj2NTJA&s=10", isPromo: true },
+      { id: 50, name: "Logitech MX Master 3S sichqonchasi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiCFU8GOwfwgxK9EqyoL2-oAYdNs0M0D1JrBL_yjY8mQ&s=10", isPromo: false },
+      { id: 51, name: "Sony PlayStation 5 Slim konsoli (1 TB)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSy0jN41wy_WLKv2pWis6p5vJI4AMWkiJZ4-j_zIjQWw&s", isPromo: true },
+      { id: 52, name: "GoPro HERO12 Black ekstremal kamerasi (5.3K, 27MP)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMw1AS4xpWV6D9b8O_FkEhYTm4TOMRS0vBExO-i8-5Q&s=10", isPromo: true },
+      { id: 53, name: "JBL Charge 5 portativ dinamigi (20W, IP67)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTIO2Biu-SAdnRr_5okr3aOtJ2nwilaCRVFHVz-mIJQ&s=10", isPromo: false },
+      { id: 54, name: "Kindle Paperwhite 11 elektron kitobi (16 GB, 6.8\")", img: "https://ir-3.ozone.ru/s3/multimedia-1-q/wc500/9825072290.jpg", isPromo: false },
+      { id: 55, name: "Nike Air Force 1 '07 krossovkalari (Oq, Erkaklar)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWpE8J5i7lKFnrCxrlxbqukxKPOYWoeQ2_z8OIi8sowQ&s=10", isPromo: true },
+      { id: 56, name: "Adidas Ultraboost 22 yugurish krossovkalari", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw5clPaDbLdxqqjSif4hXqMA97J9xlQQmrx57MelEjdA&s=10", isPromo: true },
+      { id: 57, name: "The North Face Resolve 2 shamol kurtkasi", img: "https://ir-3.ozone.ru/s3/multimedia-1-m/wc500/7879571734.jpg", isPromo: false },
+      { id: 58, name: "Ray-Ban Aviator quyosh ko'zoynagi (RB3025)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHP71MHMY1nLXH-mY-c58Sj4LTAFZHQSbcUhhE1Q9ZGw&s=10", isPromo: true },
+      { id: 59, name: "Casio G-Shock DW-5600E qo'l soati", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXgQ2VxLmsjICQTZVwlrXDAibEqd6ekW8erKXGXST9g&s=10", isPromo: false },
+      { id: 60, name: "Fossil Gen 6 smart soati (44mm)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqdXbY5tjD6WLyw_Il3v_wlY_9LjDuYVCqF6RRXK0EAg&s=10", isPromo: true },
+      { id: 61, name: "Dyson Airwrap Multi-Styler sochlar uchun", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHV1ljUYQSmJ-zf3pexIvukIWttEb18QCzWdgyBtbQew&s=10", isPromo: true },
+      { id: 62, name: "Oral-B iO Series 9 elektr tish cho'tkasi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxZVE7KbVh57Iz4vw-9fmJLywBcUBW7wGYENr-a6xl5A&s", isPromo: false },
+      { id: 63, name: "Braun Series 9 Pro elektr soqol olish mashinasi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTamS5ONLV_FTLSLp2uFjGAWktQh7TUpdNbSOM_L3hyGg&s=10", isPromo: true },
+      { id: 64, name: "De'Longhi Magnifica S kofe mashinasi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dGU08Z9f2vubULlRgnGGLOY5sS1gwlgSdwLmEBh02Q&s=10", isPromo: true },
+      { id: 65, name: "Nespresso Vertuo Next kapsula kofe apparati", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUEgc1hbsKUOtYDM21Sgt3xx0uA1kilRhJS4fW5nrRDg&s=10", isPromo: false },
+      { id: 66, name: "Instant Pot Duo 7-in-1 multivarka (6 L)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6gxYWWhztrXZMHKMOBPrkOiC5DiBRFA7gdFy47z-D1w&s=10", isPromo: false },
+      { id: 67, name: "Le Creuset Signature quyma temir qozon (24 sm)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9PkpgMALuZDYoh_lxRmM9M6R2Y1OJdfVcdqj1Nmrw1Q&s=10", isPromo: false },
+      { id: 68, name: "Lego Technic Ferrari Daytona SP3 (42143)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0hWD1pmHF7l2xW9XIJ5mPITW_EBg-_blykIEDpqUc8g&s=10", isPromo: true },
+      { id: 69, name: "Monopoly Classic stol o'yini (O'zbek tilida)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjeKvC3dov9JUyZfoJ1tIkYfn4GQNH9MS5_pb3LxplIg&s=10", isPromo: false },
+      { id: 70, name: "Vans Old Skool krossovkalari (Qora/Oq)", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrJHrk4qkpX1dNchlxIyYYd3rh02QSeOpGclaCI7cmQw&s", isPromo: false },
+      { id: 71, name: "Levi's 501 Original jinsi shimi (Erkaklar)", img: "https://ir-3.ozone.ru/s3/multimedia-1-d/wc500/20247195037.jpg", isPromo: true }
     ];
 
     const MOCK_SELLERS = ["IRINA290", "VITALIY_SHOP", "W_STORE", "EXILE_OFFICIAL", "DIMA_MARKET", "E_COSMETICS"];
@@ -581,8 +578,8 @@
       withdrawMethod: 'card'
     };
 
-    const APP_STATE_VERSION = 'uzum_v8_71'; // Изменил версию для сброса старых кешей
-    const APP_STATE_KEY = 'uzum_state2026_v8';
+    const APP_STATE_VERSION = 'uzum_v9_images'; // Изменил версию для сброса старых кешей
+    const APP_STATE_KEY = 'uzum_state2026_v9';
     const APP_STATE_VERSION_KEY = 'uzum_state_version';
 
     function loadState() {
