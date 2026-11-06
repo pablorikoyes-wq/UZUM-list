@@ -151,7 +151,7 @@
             Bugun baholash uchun mahsulotlar
           </span>
           <div class="bg-blue-50 text-[#7000FF] font-extrabold px-3.5 py-1 rounded-full border border-blue-100 flex items-center space-x-1.5 text-xs">
-            <span id="header-balance">51800 so'm</span>
+            <span id="header-balance">0 so'm</span>
           </div>
         </div>
 
@@ -483,52 +483,60 @@
     tg.expand();
     tg.setHeaderColor('#7000FF');
 
+    // Полный список товаров (30 штук)
     const PRODUCT_ASSETS = [
-      { id: 1, name: "Tez quvvatlash 67W", img: "https://i.postimg.cc/P5743xgJ/1.webp", isPromo: true },
-      { id: 2, name: "Adidas Forum Low krossovkalari", img: "https://i.postimg.cc/tC2D6DDV/1-(1).webp", isPromo: true },
-      { id: 3, name: "Yoritilgan o'yin klaviaturasi", img: "https://i.postimg.cc/rFQg4ggh/1-(10).webp", isPromo: true },
-      { id: 4, name: "Antistress Dampling o'yinchog'i", img: "https://i.postimg.cc/KvJQTQQw/1-(11).webp", isPromo: false },
-      { id: 5, name: "Mushuk o'yinchog'i", img: "https://i.postimg.cc/0yjn0mHC/1-(12).webp", isPromo: false },
-      { id: 6, name: "Bolalar kassa o'yinchog'i", img: "https://i.postimg.cc/Hknz95PS/1-(13).webp", isPromo: false },
-      { id: 7, name: "Snayper miltig'i o'yinchog'i", img: "https://i.postimg.cc/9Q0bYTNb/1-(14).webp", isPromo: false },
-      { id: 8, name: "Yoritilgan oyna", img: "https://i.postimg.cc/W1z8wrfW/1-(15).webp", isPromo: false },
-      { id: 9, name: "Qosh uchun krem-bo'yoq", img: "https://i.postimg.cc/P5JyQZF9/1-(16).webp", isPromo: false },
-      { id: 10, name: "Tatyana Razumovadan sponglar", img: "https://i.postimg.cc/K8jfDLHX/1-(17).webp", isPromo: false },
-      { id: 11, name: "Exile erkaklar parvarishi to'plami", img: "https://i.postimg.cc/3xN1FpcQ/1-(18).webp", isPromo: false },
-      { id: 12, name: "Exile Cuba Buba to'plami", img: "https://i.postimg.cc/MpH5mRFw/1-(19).webp", isPromo: false },
-      { id: 13, name: "A.Pods 4 quloqchinlari", img: "https://i.postimg.cc/c4XT3TT3/1-(2).webp", isPromo: true },
-      { id: 14, name: "Exile Cosmetics parfyumeriyasi", img: "https://i.postimg.cc/Jz0x5J2M/1-(20).webp", isPromo: false },
-      { id: 15, name: "Exile Moon Edition to'plami", img: "https://i.postimg.cc/Dw06PsM2/1-(21).webp", isPromo: false },
-      { id: 16, name: "Exile figurasi", img: "https://i.postimg.cc/0yjn0mB2/1-(22).webp", isPromo: false },
-      { id: 17, name: "Exile kolleksion figurasi", img: "https://i.postimg.cc/SxRdf8vK/1-(23).webp", isPromo: false },
-      { id: 18, name: "Akril kalit zanjiri", img: "https://i.postimg.cc/6pP0j3kN/1-(24).webp", isPromo: false },
-      { id: 19, name: "Qo'lda ishlangan \"Oq shokolad\" atiri", img: "https://i.postimg.cc/bw5TCJ7h/1-(25).webp", isPromo: false },
-      { id: 20, name: "Xlorofil", img: "https://i.postimg.cc/pLSZGTwV/1-(26).webp", isPromo: false },
-      { id: 21, name: "Exile Bear Collection to'plami", img: "https://i.postimg.cc/bw5TCJ7y/1-(27).webp", isPromo: false },
-      { id: 22, name: "Honor X6c telefoni", img: "https://i.postimg.cc/JzFq6nf1/1-(28).webp", isPromo: true },
-      { id: 23, name: "O'simliklar uchun o'g'it", img: "https://i.postimg.cc/t4c5STK4/1-(29).webp", isPromo: false },
-      { id: 24, name: "Erkaklar futbolkasi", img: "https://i.postimg.cc/kXfwSwwR/1-(3).webp", isPromo: true },
-      { id: 25, name: "Vitaminaka konfetlari", img: "https://i.postimg.cc/xTtgmggz/1-(4).webp", isPromo: false },
-      { id: 26, name: "Osiyodan shirinliklar to'plami", img: "https://i.postimg.cc/4NBwcww6/1-(5).webp", isPromo: false },
-      { id: 27, name: "Kiwis yuvish changyutgichi", img: "https://i.postimg.cc/X7Qx5xxK/1-(6).webp", isPromo: true },
-      { id: 28, name: "Sutli shokolad 1kg", img: "https://i.postimg.cc/DyB5G55d/1-(7).webp", isPromo: false },
-      { id: 29, name: "Sink", img: "https://i.postimg.cc/65YzZzz0/1-(8).webp", isPromo: false },
-      { id: 30, name: "Sady Pridonya sharbati", img: "https://i.postimg.cc/Qx0S7SSS/1-(9).webp", isPromo: false },
-      { id: 31, name: "Filcha kalit zanjiri", img: "https://i.postimg.cc/BnzgY6rL/2.webp", isPromo: false },
-      { id: 32, name: "Bolalar asboblari", img: "https://i.postimg.cc/nhWkRzys/2-(1).webp", isPromo: false },
-      { id: 33, name: "Tozalash pastasi", img: "https://i.postimg.cc/SxPrTsBz/ab-1.webp", isPromo: false }
+      { id: 1, name: "Samsung Galaxy S23 smartfoni (Android 13, Snapdragon 8 Gen 2, 256 GB, 6.67\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+Galaxy+S23", isPromo: true },
+      { id: 2, name: "Apple MacBook Air M2 noutbuki (Apple M2, 8 GB, 256 GB, 13.3\")", img: "https://placehold.co/300x400/EEEEEE/333333?text=MacBook+Air+M2", isPromo: true },
+      { id: 3, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
+      { id: 4, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
+      { id: 5, name: "Nestlé \"Shokoladli pirog\" shokoladi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Shokolad", isPromo: false },
+      { id: 6, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
+      { id: 7, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
+      { id: 8, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
+      { id: 9, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
+      { id: 10, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false },
+      { id: 11, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Yogurt", isPromo: false },
+      { id: 12, name: "Nest aqlli uyi (Aqlli rozetka, Aqlli termostat, Aqlli smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
+      { id: 13, name: "Nestlé \"Shokoladli pirog\" pirogi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Pirog", isPromo: false },
+      { id: 14, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
+      { id: 15, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
+      { id: 16, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
+      { id: 17, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
+      { id: 18, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
+      { id: 19, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
+      { id: 20, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false },
+      { id: 21, name: "Nestlé yogurt qadoqi (1 l, Laktozasiz, Ekologik paket)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Yogurt", isPromo: false },
+      { id: 22, name: "Nest aqlli uyi (Aqlli rozetka, Aqlli termostat, Aqlli smart-fob)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nest+Aqlli+Uy", isPromo: true },
+      { id: 23, name: "Nestlé \"Shokoladli pirog\" pirogi (300 g, Nestlé, 17% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Nestle+Pirog", isPromo: false },
+      { id: 24, name: "Bosch havo namlagichi (600 Vt, Plazma filtr, 40x30x40 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bosch+Namlagich", isPromo: false },
+      { id: 25, name: "Jorj Oruellning \"1984\" kitobi (Fantastika, Siyosiy drama, Falsafa)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Kitob+1984", isPromo: false },
+      { id: 26, name: "Samsung QLED 4K aqlli televizori (55\", QLED, Tizen, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Samsung+QLED+4K", isPromo: true },
+      { id: 27, name: "Bose QuietComfort 35 II quloqchinlari (5.1, Active Noise Cancellation, 185 g)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Bose+QC35+II", isPromo: false },
+      { id: 28, name: "Yumyum \"Chernichniy pirog\" pirogi (200 g, 10% shakar)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Yumyum+Pirog", isPromo: false },
+      { id: 29, name: "Sony Bravia OLED 4K televizori (65\", OLED, Android, 3840x2160)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Sony+Bravia+OLED", isPromo: true },
+      { id: 30, name: "Toaster uchun idishlar (4 slot, Keramika, 40x30x20 sm)", img: "https://placehold.co/300x400/EEEEEE/333333?text=Toaster+Idishlar", isPromo: false }
     ];
 
     const MOCK_SELLERS = ["IRINA290", "VITALIY_SHOP", "W_STORE", "EXILE_OFFICIAL", "DIMA_MARKET", "E_COSMETICS"];
+    
+    const TWO_DAYS_MS = 48 * 60 * 60 * 1000; // 48 часов в миллисекундах
 
     let appState = {
-      balance: 0, ratedCount: 0, evaluatedItems: {}, chosenProducts: [],
-      currentActiveTab: 'dashboard', lastEvaluatedId: null,
-      queuePosition: null, queueStartTime: null, withdrawMethod: 'card'
+      balance: 0, 
+      ratedCount: 0, 
+      evaluatedItems: {}, // Оценки для текущей партии карточек
+      history: [],        // Полная история всех оценок
+      chosenProducts: [], // Текущие 15 карточек
+      lastUpdateTime: 0,  // Время последнего обновления карточек
+      currentActiveTab: 'dashboard', 
+      lastEvaluatedId: null,
+      queuePosition: null, 
+      queueStartTime: null, 
+      withdrawMethod: 'card'
     };
 
-    const APP_STATE_VERSION = 'uzum_v3';
-    const APP_STATE_KEY = 'uzum_state2026_v1';
+    const APP_STATE_VERSION = 'uzum_v5_daily'; // Изменил версию, чтобы сбросить старые кеши
+    const APP_STATE_KEY = 'uzum_state2026_v5';
     const APP_STATE_VERSION_KEY = 'uzum_state_version';
 
     function loadState() {
@@ -545,7 +553,12 @@
           } catch(e) { localStorage.removeItem(APP_STATE_KEY); }
         }
       }
-      if (!appState.chosenProducts || appState.chosenProducts.length === 0) initRandomProducts();
+      
+      // Проверяем, нужно ли обновить карточки (если прошло 2 дня или их нет)
+      const now = Date.now();
+      if (!appState.chosenProducts || appState.chosenProducts.length === 0 || (now - appState.lastUpdateTime) >= TWO_DAYS_MS) {
+        initRandomProducts();
+      }
     }
 
     function saveState() {
@@ -554,15 +567,23 @@
     }
 
     function initRandomProducts() {
-      const quantity = Math.floor(Math.random() * 4) + 12;
+      // Перемешиваем и берем ровно 15 штук
       const shuffled = [...PRODUCT_ASSETS].sort(() => 0.5 - Math.random());
-      const selected = shuffled.slice(0, quantity);
+      const selected = shuffled.slice(0, 15);
+      
       appState.chosenProducts = selected.map(p => ({
-        id: p.id, name: p.name, img: p.img, isPromo: p.isPromo,
+        id: p.id, 
+        name: p.name, 
+        img: p.img, 
+        isPromo: p.isPromo,
         ratingsCount: Math.floor(Math.random() * 30) + 10,
         seller: MOCK_SELLERS[Math.floor(Math.random() * MOCK_SELLERS.length)],
         reward: (Math.floor(Math.random() * 151) + 50) * 100
       }));
+      
+      // Сбрасываем оценки текущей партии и обновляем время
+      appState.evaluatedItems = {};
+      appState.lastUpdateTime = Date.now();
       saveState();
     }
 
@@ -670,32 +691,33 @@
       const avatarEl = document.getElementById('user-avatar');
       if (user?.photo_url) avatarEl.src = user.photo_url;
       else avatarEl.src = `https://api.dicebear.com/7.x/bottts/svg?seed=${user?.id || 'guest'}`;
+      
       document.getElementById('stat-evaluated').textContent = appState.ratedCount;
       document.getElementById('stat-balance').textContent = `${appState.balance} so'm`;
+      
       const histList = document.getElementById('history-list');
       histList.innerHTML = '';
-      const entries = Object.keys(appState.evaluatedItems);
-      if (entries.length === 0) {
+      
+      // Используем массив history, который хранит ВСЕ оценки за все время
+      if (appState.history.length === 0) {
         histList.innerHTML = `<div class="text-center py-6 text-xs text-slate-400">Bu yerda sizning hisob-kitob tarixingiz bo'ladi</div>`;
       } else {
-        entries.reverse().forEach(key => {
-          const evaluated = appState.evaluatedItems[key];
-          const prod = appState.chosenProducts.find(p => p.id == key);
-          if (prod) {
-            const histItem = document.createElement('div');
-            histItem.className = "flex justify-between items-center bg-white p-3.5 rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.01)] text-xs";
-            histItem.innerHTML = `
-              <div class="flex items-center space-x-2">
-                <img src="${prod.img}" class="w-8 h-8 rounded-lg object-cover">
-                <div>
-                  <span class="font-bold text-slate-700 block line-clamp-1">${prod.name}</span>
-                  <span class="text-[10px] text-slate-400">Jami: ${evaluated.stars1 + evaluated.stars2}★ (+${evaluated.reward} so'm)</span>
-                </div>
+        // Показываем последние 20 записей
+        const recentHistory = [...appState.history].reverse().slice(0, 20);
+        recentHistory.forEach(evaluated => {
+          const histItem = document.createElement('div');
+          histItem.className = "flex justify-between items-center bg-white p-3.5 rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.01)] text-xs";
+          histItem.innerHTML = `
+            <div class="flex items-center space-x-2">
+              <img src="${evaluated.img}" class="w-8 h-8 rounded-lg object-cover">
+              <div>
+                <span class="font-bold text-slate-700 block line-clamp-1">${evaluated.name}</span>
+                <span class="text-[10px] text-slate-400">Jami: ${evaluated.stars1 + evaluated.stars2}★ (+${evaluated.reward} so'm)</span>
               </div>
-              <strong class="text-emerald-500 font-bold">+${evaluated.reward} so'm</strong>
-            `;
-            histList.appendChild(histItem);
-          }
+            </div>
+            <strong class="text-emerald-500 font-bold">+${evaluated.reward} so'm</strong>
+          `;
+          histList.appendChild(histItem);
         });
       }
     }
@@ -796,14 +818,29 @@
       const prod = appState.chosenProducts.find(p => p.id === currentEvaluatingProductId);
       if (!prod) return;
       const comment = document.getElementById('eval-comment').value.trim();
-      appState.evaluatedItems[currentEvaluatingProductId] = {
-        stars1: selectedRatingStars1, stars2: selectedRatingStars2,
-        comment: comment, reward: prod.reward
+      
+      const evalRecord = {
+        id: prod.id,
+        name: prod.name,
+        img: prod.img,
+        stars1: selectedRatingStars1, 
+        stars2: selectedRatingStars2,
+        comment: comment, 
+        reward: prod.reward
       };
+
+      // Сохраняем в текущую партию (чтобы кнопка стала неактивной)
+      appState.evaluatedItems[currentEvaluatingProductId] = evalRecord;
+      
+      // Добавляем в глобальную историю
+      appState.history.push(evalRecord);
+
       appState.balance += prod.reward;
       appState.ratedCount += 1;
       appState.lastEvaluatedId = null;
+      
       saveState();
+      
       document.getElementById('popup-reward-val').textContent = prod.reward;
       document.getElementById('header-balance').textContent = `${appState.balance} so'm`;
       document.getElementById('popup-success-eval').classList.remove('hidden');
